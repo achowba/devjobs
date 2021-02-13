@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import Brand from "../Brand/Brand";
-import headerBg from "../../../assets/img/desktop/bg-pattern-header.svg";
 import ToggleTheme from "../../UI/ToggleTheme/ToggleTheme";
+import headerBg from "../../../assets/img/desktop/bg-pattern-header.svg";
 
 const StyledHeader = styled.div`
     align-items: center;

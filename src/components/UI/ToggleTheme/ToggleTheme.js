@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { ThemeIcon, ThemeWrapper, ToggleButton, ToggleWrapper } from "./Styles";
+import { ThemeIcon, ThemeWrapper, ToggleButton, ToggleWrapper } from "./ToggleTheme.styles";
 
-import lightThemeIcon from "../../../assets/img/desktop/icon-sun.svg";
 import darkThemeIcon from "../../../assets/img/desktop/icon-moon.svg";
+import lightThemeIcon from "../../../assets/img/desktop/icon-sun.svg";
 
 class ToggleTheme extends Component {
     constructor(props) {

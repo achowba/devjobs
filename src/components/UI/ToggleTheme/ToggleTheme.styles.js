@@ -7,8 +7,15 @@ export const ThemeWrapper = styled.div`
 
 export const ThemeIcon = styled.img`
     height: 15px;
-    margin: 20px;
     width: 15px;
+
+    :first-child {
+        margin-right: 20px;
+    }
+
+    :last-child {
+        margin-left: 20px;
+    }
 `;
 
 export const ToggleWrapper = styled.div`
