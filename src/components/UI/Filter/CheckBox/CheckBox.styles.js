@@ -6,21 +6,24 @@ export const Input = styled.input`
     cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
     background-color: #5964e0;
     height: 0;
-    width: 0;
     opacity: 0;
+    width: 0;
     z-index: -1;
 `;
 
 export const Label = styled.label`
     align-items: center;
+    color: ${({ theme }) => theme.jobCard.title};
     cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
     display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     position: relative;
-    width: 100%;
+    width: fit-content;
 `;
 
 export const Indicator = styled.div`
-    background-color: ${({ checked }) => (checked ? "#5964e0" : "#e6e6e6")};
+    background-color: ${({ checked, theme }) => (checked ? "#5964e0" : theme.checkBox.bg)};
     background-image: ${({ checked }) => (checked ? `url(${checkIcon})` : 'unset')};
     background-position: center;
     background-repeat: no-repeat;

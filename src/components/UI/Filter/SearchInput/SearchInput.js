@@ -9,13 +9,15 @@ const InputWrapper = styled.div`
     width: 100%;
 
     &:not(:last-child) {
-        border-right: 2px solid #ececec;
+        border-right: ${({ theme }) => `2px solid ${theme.input.border}`};
     }
 `;
 
 const StyledInput = styled.input`
     border: none;
-    color: #555555;
+    color: ${({ theme }) => theme.jobCard.title};
+    background-color: ${({ theme }) => theme.jobCard.bg};
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
     height: 25px;
     outline: none;
@@ -23,7 +25,7 @@ const StyledInput = styled.input`
     width: 100%;
 
     ::placeholder {
-        color: #cccccc;
+        color: ${({ theme }) => theme.jobCard.company};
         font-weight: 400;
         font-size: 0.9rem;
         opacity: 1;

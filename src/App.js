@@ -1,26 +1,26 @@
+import { connect } from "react-redux";
+import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Jobs from "./pages/Jobs/Jobs";
-import Job from "./pages/Jobs/Job/Job";
-import Header from "./components/Navigation/Header/Header";
-import Filter from "./components/UI/Filter/Filter";
-import { GlobalStyles } from "./theme/Global";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./theme/Theme";
+import { GlobalStyles } from "./Theme/Global";
+import { darkTheme, lightTheme } from "./Theme/Theme";
 
-function App() {
+import Jobs from "./pages/Jobs/Jobs";
+import JobCard from "./components/Job/Job";
+import Filter from "./components/UI/Filter/Filter";
+import Header from "./components/Navigation/Header/Header";
+
+function App({ theme }) {
     return (
         <BrowserRouter>
             <Switch>
                 <ThemeProvider
-                    theme={
-                        "light" === "light" ? lightTheme : darkTheme
-                    }
+                    theme={theme === "light" ? lightTheme : darkTheme}
                 >
                     <GlobalStyles />
                     <Header />
                     <Filter />
-                    <Route path="/job/:id" component={Job} />
+                    <Route path="/job/:id" component={JobCard} />
                     <Route path="/" exact component={Jobs} />
                 </ThemeProvider>
             </Switch>
@@ -28,4 +28,10 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        ...state.theme,
+    };
+};
+
+export default connect(mapStateToProps, null)(App);

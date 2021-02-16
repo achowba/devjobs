@@ -1,8 +1,7 @@
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 
-// `${theme.button[btnType]}`
 const StyledButton = styled.button`
-    background-color: ${({theme, btnType}) => `${theme.button[btnType]}`};
+    background-color: ${({ theme, btnType }) => `${theme.button[btnType]}`};
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -18,7 +17,9 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-    return <StyledButton btnType={props.btnType}>{props.children}</StyledButton>;
+    return (
+        <StyledButton btnType={props.btnType}>{props.children}</StyledButton>
+    );
 };
 
-export default withTheme(Button);
+export default Button;

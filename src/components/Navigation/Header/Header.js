@@ -14,12 +14,17 @@ const StyledHeader = styled.div`
     justify-content: space-between;
     padding: 0 130px;
     width: calc(100% - 260px);
+
+    @media (max-width: 1200px) {
+        padding: 0 50px;
+        width: calc(100% - 100px);
+    }
 `;
 
 const Header = () => {
     return (
         <StyledHeader>
-            <Brand/>
+            <Brand />
             <ToggleTheme />
         </StyledHeader>
     );

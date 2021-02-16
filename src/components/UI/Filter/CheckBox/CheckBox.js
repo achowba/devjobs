@@ -1,5 +1,6 @@
 import { Component } from "react";
 import styled from "styled-components";
+
 import Button from "../../Button/Button";
 import { Indicator, Input, Label } from "./CheckBox.styles";
 
