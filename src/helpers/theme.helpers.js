@@ -1,6 +1,12 @@
 const getTheme = () => {
+    let preferredTheme = 'light';
     let theme = window.localStorage.getItem("app-theme");
-    return theme || "light";
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        preferredTheme = 'dark';
+    }
+
+    return theme || preferredTheme;
 };
 
 const setTheme = (value = "light") => {

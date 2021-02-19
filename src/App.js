@@ -6,8 +6,8 @@ import { GlobalStyles } from "./Theme/Global";
 import { darkTheme, lightTheme } from "./Theme/Theme";
 
 import Jobs from "./pages/Jobs/Jobs";
-import JobCard from "./components/Job/Job";
 import Filter from "./components/UI/Filter/Filter";
+import JobDetail from "./pages/Jobs/JobDetail/JobDetail";
 import Header from "./components/Navigation/Header/Header";
 
 function App({ theme }) {
@@ -19,9 +19,11 @@ function App({ theme }) {
                 >
                     <GlobalStyles />
                     <Header />
-                    <Filter />
-                    <Route path="/job/:id" component={JobCard} />
-                    <Route path="/" exact component={Jobs} />
+                    <Route path="/job/:id" component={JobDetail} />
+                    <Route path="/" exact>
+                        <Filter />
+                        <Jobs />
+                    </Route>
                 </ThemeProvider>
             </Switch>
         </BrowserRouter>

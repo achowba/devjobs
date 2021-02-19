@@ -6,7 +6,6 @@ export const Card = styled.div`
     background-color: ${({ theme }) => theme.jobCard.bg};
     border-radius: 7px;
     cursor: pointer;
-    margin-bottom: 30px;
     padding: 20px 25px;
 `;
 
