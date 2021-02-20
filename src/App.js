@@ -2,13 +2,13 @@ import { connect } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { GlobalStyles } from "./Theme/Global";
-import { darkTheme, lightTheme } from "./Theme/Theme";
-
 import Jobs from "./pages/Jobs/Jobs";
 import Filter from "./components/UI/Filter/Filter";
 import JobDetail from "./pages/Jobs/JobDetail/JobDetail";
 import Header from "./components/Navigation/Header/Header";
+
+import { GlobalStyles } from "./Theme/Global";
+import { darkTheme, lightTheme } from "./Theme/Theme";
 
 function App({ theme }) {
     return (

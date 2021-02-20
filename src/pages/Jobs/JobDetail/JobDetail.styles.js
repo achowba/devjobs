@@ -35,7 +35,9 @@ export const CompanyName = styled.div`
 export const CompanyLogo = styled.div`
     background-color: white;
     background-image: ${({ imgSrc }) => `url(${imgSrc})`};
-    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 7px 0 0 7px;
     height: 130px;
     overflow: hidden;
@@ -53,10 +55,49 @@ export const SiteLink = styled.a`
     padding: 10px 23px;
 `;
 
-export const FlexWrap = styled.div`
+export const More = styled.div`
+    background-color: ${({ theme }) => theme.jobCard.bg};
+    border-radius: 7px;
+    padding: 40px;
+`;
+
+export const Info = styled.div`
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    grid-template-columns: 60% 10% 60%;
+    width: fit-content;
+
+    & > p {
+        color: ${({ theme }) => theme.jobCard.company};
+        font-size: 0.8rem;
+        margin: 0 0 5px 0;
+        width: fit-content;
+    }
+`;
+
+export const Title = styled.p`
+    color: ${({ theme }) => theme.jobCard.title};
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    max-width: 90%;
+`;
+
+export const Location = styled.p`
+    color: ${({ theme }) => theme.jobCard.location};
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 5px 0 0 0;
+`;
+
+export const FlexWrap = styled.div`
+    align-items: center;
+    display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+`;
+
+export const Description = styled.div`
+    color: ${({ theme }) => theme.jobCard.title};
+    margin-top: 20px;
 `;

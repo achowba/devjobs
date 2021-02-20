@@ -2,8 +2,10 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 import * as Detail from "./JobDetail.styles";
-import * as actionCreators from "../../../actions/JobDetail";
+import { timeAgo } from "../../../helpers/job.helpers";
+import { Divider } from "../../../components/Job/Job.styles";
 import Button from "../../../components/UI/Button/Button";
+import * as actionCreators from "../../../actions/JobDetail";
 
 class JobDetail extends Component {
     componentDidMount() {
@@ -13,7 +15,7 @@ class JobDetail extends Component {
 
     x = (url) => {
         // https://www.bitgrip.de
-    }
+    };
 
     render() {
         let jobDetail = "Loading....";
@@ -30,37 +32,38 @@ class JobDetail extends Component {
                                 <p>{job.company_url || job.company}</p>
                             </Detail.CompanyName>
                             <Detail.SiteLink
-                                href={job.url}
+                                href={job.company_url}
                                 target="_blank"
                                 rel="noreferrer"
                             >
                                 Company Site
                             </Detail.SiteLink>
                         </Detail.TopBar>
-                        <div className="Info">
-                            <p></p>
-                            <div>
-                                <div className="Info-Header">
-                                    <p>Senior Software Engineer</p>
-                                    <p>
-                                        Remote, Seoul, Tokyo, Mountain View, San
-                                        Fransisco
-                                    </p>
+                        <Detail.More>
+                            <Detail.FlexWrap>
+                                <div>
+                                    <Detail.Info>
+                                        <p>{timeAgo(job.created_at)}</p>
+                                        <Divider />
+                                        <p>{job.type}</p>
+                                    </Detail.Info>
+                                    <Detail.Title>{job.title}</Detail.Title>
+                                    <Detail.Location>
+                                        {job.location}
+                                    </Detail.Location>
                                 </div>
-                                <button>Apply Now</button>
-                            </div>
-                            <div className="Description">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Repudiandae debitis,
-                                    officiis nesciunt fugit unde sunt, deserunt
-                                    qui consequuntur officia facere, quo harum
-                                    ex reprehenderit quasi asperiores
-                                    necessitatibus consectetur provident
-                                    corrupti?
-                                </p>
-                            </div>
-                        </div>
+                                <Button
+                                    btnType="secondary"
+                                    style={{ width: "25%" }}
+                                    href="/"
+                                >
+                                    Apply Now
+                                </Button>
+                            </Detail.FlexWrap>
+                            <Detail.Description>
+                                {job.description}
+                            </Detail.Description>
+                        </Detail.More>
                     </Detail.Wrapper>
                     <footer>
                         <div className="Info-Header">
