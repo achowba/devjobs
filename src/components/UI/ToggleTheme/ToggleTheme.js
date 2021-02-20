@@ -7,7 +7,7 @@ import {
     ToggleButton,
     ToggleWrapper,
 } from "./ToggleTheme.styles";
-import * as actionTypes from '../../../constants/actions';
+import * as actionTypes from '../../../constants/Actions';
 import darkThemeIcon from "../../../assets/img/desktop/icon-moon.svg";
 import lightThemeIcon from "../../../assets/img/desktop/icon-sun.svg";
 

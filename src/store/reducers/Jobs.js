@@ -1,14 +1,13 @@
-import * as actionTypes from "../../constants/actions";
+import * as actionTypes from "../../constants/Actions";
 
 const initialState = {
     jobs: null,
     error: false,
     next_page: 2,
-    job_detail: null,
     fetching_more_jobs: false,
 };
 
-export const jobsReducer = (state = initialState, action) => {
+const JobsReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.DISPLAY_JOBS:
             return {
@@ -35,3 +34,5 @@ export const jobsReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+export default JobsReducer;

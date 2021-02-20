@@ -1,11 +1,11 @@
-import * as actionTypes from "../../constants/actions";
+import * as actionTypes from "../../constants/Actions";
 import { getTheme, setTheme } from "../../helpers/theme.helpers";
 
 const initialState = {
     theme: getTheme(),
 };
 
-export const themeReducer = (state = initialState, action) => {
+const ThemeReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.TOGGLE_THEME:
             const toggledTheme = state.theme === "light" ? "dark" : "light";
@@ -19,3 +19,5 @@ export const themeReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+export default ThemeReducer;

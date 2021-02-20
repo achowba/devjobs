@@ -18,7 +18,13 @@ const StyledButton = styled.button`
 
 const Button = (props) => {
     return (
-        <StyledButton btnType={props.btnType} onClick={props.clicked ? props.clicked : null}>{props.children}</StyledButton>
+        <StyledButton
+            btnType={props.btnType}
+            onClick={props.clicked ? props.clicked : null}
+            {...props}
+        >
+            {props.children}
+        </StyledButton>
     );
 };
 

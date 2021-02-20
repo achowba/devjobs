@@ -10,6 +10,7 @@ export const lightTheme = {
     button: {
         primary: "#eeeffc",
         secondary: "#5964e0",
+        light: "#efeffb",
     },
     jobCard: {
         bg: "#ffffff",
@@ -33,6 +34,7 @@ export const darkTheme = {
     button: {
         primary: "#eeeffc",
         secondary: "#5964e0",
+        light: "#efeffb",
     },
     jobCard: {
         bg: "#18202d",

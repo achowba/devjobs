@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { DEFAULT_LOGO } from '../../constants/jobs';
+import { DEFAULT_LOGO } from '../../constants/Jobs.constant';
 
 export const Card = styled.div`
     background-color: ${({ theme }) => theme.jobCard.bg};
@@ -26,7 +26,6 @@ export const Info = styled.div`
     align-items: center;
     display: grid;
     gap: 0;
-    /* grid-template-columns: 1fr 15px 1fr; */
     grid-template-columns: 60% 10% 60%;
     width: fit-content;
 

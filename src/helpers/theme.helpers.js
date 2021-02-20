@@ -6,6 +6,7 @@ const getTheme = () => {
         preferredTheme = 'dark';
     }
 
+    setTheme(theme || preferredTheme);
     return theme || preferredTheme;
 };
 

@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import JobCard from "../../components/Job/Job";
+import * as actionCreators from "../../actions/Jobs";
 import Button from "../../components/UI/Button/Button";
 import Loading from "../../components/UI/Loading/Loading";
-import * as actionCreators from "../../actions/job.action";
 import JobCardSkeleton from "../../components/Job/Job.skeleton";
 
 const JobsWrapper = styled.div`

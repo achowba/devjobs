@@ -1,11 +1,13 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import { jobsReducer } from './jobs.reducer';
-import { themeReducer } from './theme.reducer';
+import JobsReducer from "./Jobs";
+import ThemeReducer from "./Theme";
+import JobDetailReducer from "./JobDetail";
 
 const rootReducer = combineReducers({
-    theme: themeReducer, // redux add a level of nesting to the global state object, so state.counter becomes state.ctr.counter
-    jobsState: jobsReducer,
+    theme: ThemeReducer,
+    jobsState: JobsReducer,
+    jobsDetailState: JobDetailReducer,
 });
 
 export default rootReducer;

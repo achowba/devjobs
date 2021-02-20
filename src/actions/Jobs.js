@@ -1,18 +1,11 @@
 import axios from "../helpers/axios.helpers";
-import * as actionTypes from "../constants/actions";
-import { JOBS_URL, JOB_DETAIL_URL } from "../constants/jobs";
+import * as actionTypes from "../constants/Actions";
+import { JOBS_URL } from "../constants/Jobs.constant";
 
 const displayJobs = (jobs) => {
     return {
         type: actionTypes.DISPLAY_JOBS,
         jobs,
-    };
-};
-
-const displayJobDetail = (job) => {
-    return {
-        type: actionTypes.DISPLAY_JOB_DETAIL,
-        job,
     };
 };
 
@@ -54,24 +47,6 @@ export const loadMoreJobs = (page) => {
             .then((response) => {
                 dispatch(displayMoreJobs(response.data, page + 1));
                 dispatch(setLoadingStatus(false));
-            })
-            .catch((err) => {
-                console.log("---------------An Error Occured!---------------");
-                console.log(err);
-                console.log("-----------------------------------------------");
-            });
-    };
-};
-
-export const fetchJobDetail = (id) => {
-    return (dispatch) => {
-        // dispatch(setLoadingStatus(true));
-        axios
-            .get(`${JOB_DETAIL_URL}/${id}.json`)
-            .then((response) => {
-                console.log(response.data);
-                // dispatch(displayJobDetail(response.data));
-                // dispatch(setLoadingStatus(false));
             })
             .catch((err) => {
                 console.log("---------------An Error Occured!---------------");
