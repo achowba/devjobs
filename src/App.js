@@ -7,8 +7,8 @@ import Filter from "./components/UI/Filter/Filter";
 import JobDetail from "./pages/Jobs/JobDetail/JobDetail";
 import Header from "./components/Navigation/Header/Header";
 
-import { GlobalStyles } from "./Theme/Global";
-import { darkTheme, lightTheme } from "./Theme/Theme";
+import { GlobalStyles } from "./theme/Global";
+import { darkTheme, lightTheme } from "./theme/Theme";
 
 function App({ theme }) {
     return (
