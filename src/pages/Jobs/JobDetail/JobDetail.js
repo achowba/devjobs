@@ -60,9 +60,11 @@ class JobDetail extends Component {
                                     Apply Now
                                 </Button>
                             </Detail.FlexWrap>
-                            <Detail.Description>
-                                {job.description}
-                            </Detail.Description>
+                            <Detail.Description
+                                dangerouslySetInnerHTML={{
+                                    __html: job.description,
+                                }}
+                            ></Detail.Description>
                         </Detail.More>
                     </Detail.Wrapper>
                     <footer>

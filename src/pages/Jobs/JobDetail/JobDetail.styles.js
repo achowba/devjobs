@@ -99,5 +99,24 @@ export const FlexWrap = styled.div`
 
 export const Description = styled.div`
     color: ${({ theme }) => theme.jobCard.title};
-    margin-top: 20px;
+    font-size: 0.9rem;
+    margin-top: 30px;
+
+    & > p {
+        /* display: none; */
+    }
+
+    & > p > em {
+        color: #5964e0;
+        font-style: unset;
+        font-weight: 600;
+    }
+
+    & > ul > li {
+        margin-top: 10px;
+    }
+
+    & > ul > li > a {
+        color: #5964e0;
+    }
 `;
